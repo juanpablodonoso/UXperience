@@ -2,6 +2,8 @@
 Proyecto para la asignatura Diseño de Interfaces de Usuario donde se diseña una web
 para hoteles siguiendo los principios de diseño centrado en usuario para desarrollo web. 
 
+
+
 ###Algunos recursos
 ####Aspectos de diseño:
 
