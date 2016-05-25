@@ -1,0 +1,29 @@
+{
+  "name": "sibw",
+  "authors": [
+    "Pablo Lara <pablo95lp@gmail.com>"
+  ],
+  "description": "SIBW website",
+  "main": "public/index.php",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "sibw",
+    "website"
+  ],
+  "license": "MIT",
+  "homepage": "http://sibw.es",
+  "private": true,
+  "ignore": [
+    "public/components"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.5"
+  },
+  "devDependencies": {
+    "font-awesome": "~4.5.0",
+    "flat-color-icons": "~1.0.2",
+    "pickadate": "^3.5.6"
+  }
+}

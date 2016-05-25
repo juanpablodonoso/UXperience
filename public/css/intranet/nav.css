@@ -1,0 +1,9 @@
+.brand-logo {
+    color:#212121;
+    font-family: Montserrat,sans-serif;
+    font-weight:700
+}
+
+.uppercase {
+    text-transform:uppercase
+}

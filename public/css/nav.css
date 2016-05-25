@@ -1,0 +1,57 @@
+.navbar, .navbar ul,.navbar ul li{
+    border-bottom-width: 0;
+    margin: 0;
+    background-color: white;
+    font-size: medium;
+}
+
+.navbar-default .navbar-nav li a{
+    height: inherit;
+    font-family: 'Roboto', sans-serif;
+    padding: 25px 15px;
+    color: #5a5a5a;
+
+}
+
+.navbar-default .navbar-nav li a:focus {
+    color: #5a5a5a;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: goldenrod;
+}
+
+.navbar-default .navbar-nav #active,.navbar-default .navbar-nav #active a{
+    color: white;
+    background-color: goldenrod;
+
+}
+
+.navbar .navbar-header .navbar-brand{
+    height: 70px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar .navbar-header .navbar-brand img{
+    max-height: 70px;
+}
+
+.navbar-header .navbar-toggle{
+    margin-top: 18px;
+}
+
+.navbar-collapse{
+    padding: 0;
+}
+
+.dropdown-menu{
+    border: none;
+    border-radius: 0;
+    padding: 0px;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}

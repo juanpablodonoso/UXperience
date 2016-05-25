@@ -1,0 +1,69 @@
+.parallax-promotion {
+    background:linear-gradient(rgba(28,28,28,.3),rgba(28,28,28,.3)),url(../img/promotions.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 4em;
+    font-family: 'Noto Serif', 'Droid Serif', serif;
+}
+
+.parallax-promotion h1 {
+    color: white;
+    font-size: 2em;
+    text-align: left;
+    font-style: italic;
+}
+
+.promotions-container{
+    background-color: #ebebeb;
+    padding: 50px 40px 0px 40px;
+}
+
+.promotions{
+    padding-bottom: 40px;
+}
+
+.thumbnail{
+    background-color: white;
+    padding: 0;
+    border-radius: 0;
+}
+
+.caption{
+    padding: 35px 30px 40px 30px;
+    font-family: 'Noto Serif', 'Droid Serif', serif;
+}
+
+.caption h3{
+    font-size: 1.5em;
+}
+
+.promotion-more{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px 25px;
+    border-top: 1px solid goldenrod;
+    border-bottom: 1px solid goldenrod;
+}
+
+.promotion-more .button {
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    font-style: italic;
+    color:goldenrod;
+    background-color: transparent;
+}
+
+.promotion-more .button:focus {
+    outline:0;
+}
+
+.modal-content{
+    border-radius: 0;
+}

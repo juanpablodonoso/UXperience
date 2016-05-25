@@ -1,0 +1,30 @@
+#auth_wrapper
+{
+    background:url(../../img/background-logo.jpg) no-repeat center center fixed;
+    background-size:cover;
+    overflow:hidden;
+    display:table;
+    text-align:center;
+    width:100%
+}
+#auth_wrapper .container
+{
+    display:table-cell;
+    vertical-align:middle;
+    width:100%
+}
+#auth_wrapper .container .btn
+{
+    margin-top:20px;
+    width:100%;
+    min-height:60px;
+    font-size:18px;
+    line-height:60px
+}
+#auth_wrapper .container #auth_box
+{
+    box-shadow:1px 1px 5px 0 rgba(0,0,0,.35);
+    border-radius:3px;
+    padding:20px 20px 30px;
+    background-color:#fff
+}
