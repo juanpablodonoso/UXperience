@@ -48,6 +48,8 @@ class HomeView{
 
     private function print_carousel(){
         echo '
+        <div class="container">
+            <div class=""
             <!-- Slide de imagenes -->
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -99,6 +101,8 @@ class HomeView{
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
+        </div>
         ';
     }
 
@@ -106,13 +110,13 @@ class HomeView{
         echo '
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6 description">
+                    <div class=" col-xs-12 col-sm-12 col-md-6 description">
                         <h1 id="description-header">Hotel Plaza Nueva</h1>
                         <p id="description-text">Situado en pleno centro monumental, comercial y administrativo de Granada,
                             nuestro hotel ofrece una gran variedad de servicios que satisfarán cualquier necesidad que le surja.
                         </p>
                     </div>
-                    <div class="col-sm-6 characteristics" id="service">
+                    <div class="col-xs-12 col-sm-12 col-md-6 characteristics" id="service">
                         <p>Tiene a su disposición los siguientes servicios:</p>
                         <div class="service">
                             <i class="flaticon-icon-62768"></i>

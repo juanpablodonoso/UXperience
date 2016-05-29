@@ -54,18 +54,33 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
             
                 <link rel="shortcut icon" href="img/favicon.ico"/>
-            
+
+
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
                 <!-- jQuery library -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
                 <!-- Latest compiled JavaScript -->
                 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-                <!-- Personal scripts -->';
+                <!-- Personal scripts -->
+
+                <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document,"script", "facebook-jssdk"));</script>
+                    ';
+
+
                 if($page == 'contact')
                     echo'<script src="js/emailValidation.js"></script>';
                 else if($page == 'intranet')
                     echo'<script src="js/intranet.js"></script>';
+
+
 
 
             echo'
