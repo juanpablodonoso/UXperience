@@ -46,8 +46,11 @@ class PublicController{
                 $contact->print_contact();
                 break;
             case 'reserve':
-                $reserve = new ReserveView();
-                $reserve->print_reserve();
+                if(isset($_GET['step'])){
+                    $reserve = new ReserveView();
+                    $step = $_GET['step'];
+                    $reserve->print_reserve($step);
+                }
                 break;
             default:
                 $home = new HomeView();

@@ -1,4 +1,10 @@
-.bs-wizard {margin-top: 40px;}
+.steps{
+    background-color: #ebebeb;
+}
+
+.bs-wizard {
+    margin-top: 40px;
+}
 
 /*Form Wizard*/
 .bs-wizard {
@@ -14,13 +20,13 @@
 .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
     color: #595959;
-    font-size: 16px;
+    font-size: 1.15em;
     margin-bottom: 5px;
 }
 
 .bs-wizard > .bs-wizard-step .bs-wizard-info {
     color: #999;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot {
@@ -98,3 +104,99 @@
     pointer-events: none;
 }
 /*END Form Wizard*/
+
+.select-room-title{
+    font-family: 'Noto Serif','Droid Serif', serif;
+    margin: 0px;
+    padding: 10px 0px;
+    background-color: white;
+    color: #232528;
+}
+
+.select-room-title h1{
+    font-size: 2em;
+}
+
+.section{
+    padding-bottom: 30px;
+}
+
+.input-style{
+    border-radius: 0
+}
+
+.noresize {
+    resize: none;
+}
+
+.button {
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+    border-radius: 0;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: none;
+    color:goldenrod;
+    background-color: transparent;
+}
+
+.button:focus {
+    outline:0;
+}
+
+.form-control:focus {
+    border-color: goldenrod;
+    box-shadow: none;
+}
+
+.select-room-submit{
+    padding-top: 25px;
+}
+
+.panel{
+    border-radius: 0;
+}
+
+.table-room{
+    padding: 0px 40px 0px 0px;
+    margin: 0 !important;
+}
+
+.next{
+    padding: 0px 0px 20px 155px;
+    margin: 0 !important;
+}
+
+.noroom-message{
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 200px;
+    padding: 70px 15px 0px 15px;
+    margin-bottom: 20px;
+    color: #808080;
+}
+
+.section-info{
+    padding-bottom: 0px;
+}
+
+.garantia{
+    font-family: 'Noto Serif','Droid Serif', serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #232528;
+    border-bottom: 6px;
+    border-bottom-color: black;
+}
+
+.garantia h4{
+    margin: 0;
+    padding: 0;
+}

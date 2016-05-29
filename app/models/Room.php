@@ -10,7 +10,6 @@ class Room
         $this->id = $id;
         $this->type = $type;
         $this->room_number = $room_number;
-
     }
 
     public function get_id(){
@@ -27,6 +26,14 @@ class Room
 
     public function set_type($type){
         $this->type = $type;
+    }
+
+    public function set_number($room_number){
+        $this->room_number = $room_number;
+    }
+    
+    public function get_number(){
+        return $this->room_number;
     }
 
 }
