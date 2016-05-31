@@ -16,8 +16,8 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', 'diu', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
-(2, 'recepcionista', 'recepcionista@gmail.com', 'diu', '2016-05-08 17:27:13', '2016-05-08 17:27:54');
+(1, 'admin', 'admin@gmail.com', 'sibw', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+(2, 'recepcionista', 'recepcionista@gmail.com', 'sibw', '2016-05-08 17:27:13', '2016-05-08 17:27:54');
 
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
@@ -55,23 +55,23 @@ CREATE TABLE `roomtypes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `price` decimal(8,2) COLLATE utf8_unicode_ci NOT NULL,
+  `base_price` decimal(8,2) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `roomtypes_name_unique` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `roomtypes` (`id`, `name`, `description`, `price`, `created_at`, `updated_at`) VALUES
-  (1, 'Individual', null, 49.59,'2016-05-08 17:27:13', '2016-05-22 15:23:08'),
-  (2, 'Doble', null, 59.99,'2016-05-08 17:27:13', '2016-05-22 15:23:08'),
-  (3, 'Triple', null, 69.59, '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
-  (4, 'Familiar', null, 79.59, '2016-05-08 17:27:13', '2016-05-22 15:23:08');
+INSERT INTO `roomtypes` (`id`, `name`, `description`, `base_price`, `created_at`, `updated_at`) VALUES
+  (1, 'Individual', null, 49.99, '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (2, 'Doble', null, 69.99,'2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (3, 'Triple', null, 75.99,'2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (4, 'Familiar', null, 89.99,'2016-05-08 17:27:13', '2016-05-22 15:23:08');
 
 DROP TABLE IF EXISTS `rooms`;
 CREATE TABLE `rooms` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `room_number` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `room_number` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `roomtype_id` int(10) unsigned DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -126,11 +126,13 @@ CREATE TABLE `reserves` (
   `ending_date` date NOT NULL,
   `adults_number` varchar(2) COLLATE utf8_unicode_ci  DEFAULT '0' NOT NULL,
   `children_number` varchar(2) COLLATE utf8_unicode_ci DEFAULT '0' NOT NULL,
-  `promotion_code` varchar(5) COLLATE utf8_unicode_ci NULL,
+  `promotion_code` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `surname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `observations` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `cardholder` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `card_number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -144,9 +146,8 @@ CREATE TABLE `reserves` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `reserves` (`id`, `starting_date`, `ending_date`, `adults_number`, `children_number`, `name`, `surname`, `email`, `observations`, `phone`, `cardholder`,`card_number`, `card_type`, `card_expiration_month`, `card_expiration_year`, `card_cvc`, `total_amount`, `created_at`, `updated_at`) VALUES
-  ('1', '2016-05-11', '2016-05-19', '2', '0', 'Pablo', 'Lara', 'pablo@gmail.com', NULL, '123456789', 'Pablo', '123456789', 'VISA', '12', '16', '123', 119.98,'0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000');
-
+INSERT INTO `reserves` (`id`, `starting_date`, `ending_date`, `adults_number`, `children_number`, `name`, `surname`, `email`, `observations`, `address`, `city`, `phone`, `cardholder`, `card_number`, `card_type`, `card_expiration_month`, `card_expiration_year`, `card_cvc`, `total_amount`, `created_at`, `updated_at`) VALUES
+  ('1', '2016-05-11', '2016-05-19', '2', '0', 'Pablo', 'Lara', 'pablo@gmail.com', NULL, 'calle', 'Madrid', '123456789', 'Pablo','123456789', 'VISA', '12', '16', '123', 199.98, '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000');
 
 DROP TABLE IF EXISTS `reserves_rooms`;
 CREATE TABLE `reserves_rooms` (
@@ -188,3 +189,13 @@ CREATE TABLE `promotions` (
    PRIMARY KEY (`id`),
    UNIQUE KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `promotions` (`id`, `name`, `description`, `code`, `created_at`, `updated_at`) VALUES
+  /*5 habitaciones individuales*/
+  (1, 'Oferta de dos noches', NULL,'DOSNOCHES', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (2, 'Oferta de 10% de descuento', NULL,'10POR100', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (3, 'Reserva anticipada', NULL,'ANTICIPADA', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (4, 'Doble tren','Habitación doble junto con tren turístico','DOBLETREN', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (5, 'Doble árabes', 'Habitación doble junto con sesión de baños árabes','DOBLEARABE', '2016-05-08 17:27:13', '2016-05-22 15:23:08'),
+  (6, 'Doble Flamenco', 'Habitación doble junto con espectáculo de flamenco','DOBLEFLAMENCO', '2016-05-08 17:27:13', '2016-05-22 15:23:08');
+

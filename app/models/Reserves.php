@@ -36,25 +36,34 @@ class Reserves extends Model{
     }
 
     function delete($id){
-        $statement = 'DELETE * FROM reserves WHERE id = \''.$id.'\'';
+        $statement = 'DELETE FROM reserves WHERE id = \''.$id.'\'';
         return Db::getInstance()->query($statement);
     }
 
     function update($reserve){
-
+        $db=Db::getInstance();
+        return $db->query("UPDATE reserves SET starting_date='{$reserve->getStartingDate()}', ending_date='{$reserve->getEndingDate()}', 
+                             adults_number='{$reserve->getAdultsNumber()}', children_number='{$reserve->getChildrenNumber()}',
+                             promotion_code='{$reserve->getPromotionCode()}', name='{$reserve->getName()}', 
+                             surname='{$reserve->getSurname()}', phone='{$reserve->getPhone()}',
+                             email='{$reserve->getEmail()}', observations='{$reserve->getObservations()}',
+                             cardholder='{$reserve->getCardholder()}', card_number='{$reserve->getCardNumber()}',
+                             card_type='{$reserve->getCardType()}', card_expiration_month='{$reserve->getCardExpirationMonth()}',
+                             card_expiration_year='{$reserve->getCardExpirationYear()}', card_cvc='{$reserve->getCardCvc()}' WHERE id={$reserve->getId()}");
     }
 
     function save($reserve){
         $db = Db::getInstance();
-        return $db->query("INSERT INTO reserves (id, starting_date, ending_date, adults_number, children_number,
-                            promotion_code, name, surname, phone, email, observations, cardholder, card_number, card_type, card_expiration_month,
-                            card_expiration_year, card_cvc, created_at, updated_at)
-                          VALUES ('','{$reserve->getStartingDate()}','{$reserve->getEndingDate()}','{$reserve->getRoomsNumber()}',
-                          '{$reserve->getAdultsNumber()}', '{$reserve->getChildrenNumber()}','{$reserve->getPromotionCode()}'
-                          '{$reserve->getName()}','{$reserve->getSurname()}','{$reserve->getPhone()}'
-                          '{$reserve->getEmail()}','{$reserve->getObservations()}','{$reserve->getCardholder()}',
-                          '{$reserve->getCardType()}','{$reserve->getCardNumber()}','{$reserve->getCardExpirationMonth()}',
-                          '{$reserve->getCardExpirationYear()}','{$reserve->getCardCvc()}',NULL,NULL)");
+        $db->query("INSERT INTO reserves (id, starting_date, ending_date, adults_number, children_number,
+                            promotion_code, name, surname, email, observations, address, city, phone,cardholder, card_number, card_type, card_expiration_month,
+                            card_expiration_year, card_cvc, total_amount,created_at, updated_at)
+                          VALUES ('','{$reserve->getStartingDate()}','{$reserve->getEndingDate()}',
+                          '{$reserve->getAdultsNumber()}', '{$reserve->getChildrenNumber()}','{$reserve->getPromotionCode()}',
+                          '{$reserve->getName()}','{$reserve->getSurname()}','{$reserve->getEmail()}',
+                          '{$reserve->getObservations()}', '{$reserve->getAddress()}', '{$reserve->getCity()}', '{$reserve->getPhone()}',
+                          '{$reserve->getCardholder()}', '{$reserve->getCardNumber()}','{$reserve->getCardType()}','{$reserve->getCardExpirationMonth()}',
+                          '{$reserve->getCardExpirationYear()}','{$reserve->getCardCvc()}','{$reserve->getTotalAmount()}',NULL,NULL)");
+        return $db->insert_id;
     }
 
     function allByDate($starting_date, $ending_date){
@@ -77,21 +86,23 @@ class Reserves extends Model{
         $reserve->setId($row['id']);
         $reserve->setStartingDate($row['starting_date']);
         $reserve->setEndingDate($row['ending_date']);
-        $reserve->setRoomsNumber($row['rooms_number']);
         $reserve->setAdultsNumber($row['adults_number']);
         $reserve->setChildrenNumber($row['children_number']);
         $reserve->setPromotionCode($row['promotion_code']);
         $reserve->setName($row['name']);
         $reserve->setSurname($row['surname']);
-        $reserve->setPhone($row['phone']);
         $reserve->setEmail($row['email']);
         $reserve->setObservations($row['observations']);
+        $reserve->setAddress($row['address']);
+        $reserve->setCity($row['city']);
+        $reserve->setPhone($row['phone']);
         $reserve->setCardholder($row['cardholder']);
         $reserve->setCardType($row['card_type']);
         $reserve->setCardNumber($row['card_number']);
         $reserve->setCardExpirationMonth($row['card_expiration_month']);
         $reserve->setCardExpirationYear($row['card_expiration_year']);
         $reserve->setCardCvc($row['card_cvc']);
+        $reserve->setTotalAmount($row['total_amount']);
 
         //Obtengo la(s) habitacion(es) asociada(s) a la reserva
         $statement = 'SELECT * FROM reserves_rooms WHERE reserve_id = \''.$row['id'].'\'';

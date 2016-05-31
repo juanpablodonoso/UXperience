@@ -43,9 +43,7 @@ class Rooms extends Model{
 
     public function update($room){
         $db=Db::getInstance();
-        return $db ->query("UPDATE rooms SET room_number={$room->get_number()} WHERE id={$room->get_id()}") && $db ->query("UPDATE rooms SET roomtype_id={$room->get_type()} WHERE id={$room->get_id()}");
-
-
+        return $db ->query("UPDATE rooms SET room_number={$room->get_number()} WHERE id={$room->get_id()}") && $db->query("UPDATE rooms SET roomtype_id={$room->get_type()} WHERE id={$room->get_id()}");
     }
 
     public function save($room){

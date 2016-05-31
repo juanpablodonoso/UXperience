@@ -1,46 +1,50 @@
 <?php
 include_once '../app/controllers/Controller.php';
-include_once '../resources/views/intranet/IntranetReservesView.php';
 include_once '../app/models/Reserve.php';
 include_once '../app/models/Reserves.php';
 include_once '../app/models/Rooms.php';
 include_once '../app/models/Roomtype.php';
 include_once '../app/models/Roomtypes.php';
+include_once '../app/models/ReserveRooms.php';
+include_once '../app/models/ReservesRooms.php';
 
-class ReservesController extends Controller
+class ReservesController
 {
-    function index(){
+    function publicStore(){
+        $reserve = new Reserve();
+        $this->silentSave($reserve);
         $reserves = new Reserves();
-        $list = $reserves->all();
-        IntranetReservesView::print_index($list);
+        $id = $reserves->save($reserve);
+        if($id != null){
+            $this->insertReservedRooms($id);
+            header("Location: /?page=reserve&step=summary");
+        }
+        else{
+            header("Location: /?page=reserve&step=confirm");
+        }
     }
 
-    function create(){
-        IntranetReservesView::print_create();
-    }
-
-    function store(){
-
-    }
-
-    function show($id){
-
-    }
-
-    function edit($id){
-
-    }
-
-    function update($id){
-
-    }
-
-    function delete($id){
-
-    }
-
-    private function silent_save($reserve){
-
+    private function silentSave($reserve){
+        $reserve->setStartingDate($_POST['starting_date_submit']);
+        $reserve->setEndingDate($_POST['ending_date_submit']);
+        $reserve->setAdultsNumber($_POST['adults_number']);
+        $reserve->setChildrenNumber($_POST['children_number']);
+        $reserve->setPromotionCode($_POST['promotion_code']);
+        $reserve->setName($_POST['name']);
+        $reserve->setSurname($_POST['surname']);
+        $reserve->setEmail($_POST['email']);
+        $reserve->setObservations($_POST['observations']);
+        $reserve->setAddress($_POST['address']);
+        $reserve->setCity($_POST['city']);
+        $reserve->setPhone($_POST['phone']);
+        $reserve->setCardholder($_POST['cardholder']);
+        $reserve->setCardType($_POST['card_type']);
+        $reserve->setCardNumber($_POST['card_number']);
+        $reserve->setCardExpirationMonth($_POST['card_expiration_month']);
+        $reserve->setCardExpirationYear($_POST['card_expiration_year']);
+        $reserve->setCardCvc($_POST['card_cvc']);
+        $reserve->setTotalAmount($_POST['total_amount_submit']);
+        
     }
 
     function getRoomsAvailable($starting_date, $ending_date){
@@ -71,4 +75,44 @@ class ReservesController extends Controller
 
         return $available;
     }
+
+    function insertReservedRooms($id){
+        if($_POST['select_Individual'] != 0){
+            $reserverooms = new ReserveRooms();
+            $reserverooms->setReserveId($id);
+            $reserverooms->setRoomtypeId(1);
+            $reserverooms->setRoomsNumber(intval($_POST['select_Individual']));
+
+            $reservesrooms = new ReservesRooms();
+            $reservesrooms->save($reserverooms);
+        }
+        if($_POST['select_Doble'] != 0){
+            $reserverooms = new ReserveRooms();
+            $reserverooms->setReserveId($id);
+            $reserverooms->setRoomtypeId(2);
+            $reserverooms->setRoomsNumber(intval($_POST['select_Doble']));
+
+            $reservesrooms = new ReservesRooms();
+            $reservesrooms->save($reserverooms);
+        }
+        if($_POST['select_Triple'] != 0){
+            $reserverooms = new ReserveRooms();
+            $reserverooms->setReserveId($id);
+            $reserverooms->setRoomtypeId(3);
+            $reserverooms->setRoomsNumber(intval($_POST['select_Triple']));
+
+            $reservesrooms = new ReservesRooms();
+            $reservesrooms->save($reserverooms);
+        }
+        if($_POST['select_Familiar'] != 0){
+            $reserverooms = new ReserveRooms();
+            $reserverooms->setReserveId($id);
+            $reserverooms->setRoomtypeId(4);
+            $reserverooms->setRoomsNumber(intval($_POST['select_Familiar']));
+
+            $reservesrooms = new ReservesRooms();
+            $reservesrooms->save($reserverooms);
+        }
+    }
+
 }

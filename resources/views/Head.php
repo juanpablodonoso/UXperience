@@ -66,7 +66,8 @@
                     echo'<script src="js/emailValidation.js"></script>';
                 else if($page == 'intranet')
                     echo'<script src="js/intranet.js"></script>';
-
+                else if($page == 'reserve')
+                    echo'<script src="js/reserve.js"></script>';
 
             echo'
                 <!-- Personal CSS -->
@@ -84,7 +85,7 @@
                 <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css">
                 <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic" rel="stylesheet" type="text/css">';
 
-                if($page == 'homepage' || $page = 'contact')
+                if($page == 'homepage' || $page == 'contact' || $page==null)
                     $this->printGoogleMap();
 
                 echo'</head>';

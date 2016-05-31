@@ -4,21 +4,23 @@ class Reserve {
     var $id;
     var $starting_date;
     var $ending_date;
-    var $rooms_number;
     var $adults_number;
     var $children_number;
     var $promotion_code;
     var $name;
     var $surname;
-    var $phone;
     var $email;
     var $observations;
+    var $address;
+    var $city;
+    var $phone;
     var $cardholder;
     var $card_type;
     var $card_number;
     var $card_expiration_month;
     var $card_expiration_year;
     var $card_cvc;
+    var $total_amount;
     var $reserved_rooms;
     var $assigned_rooms;
 
@@ -41,13 +43,13 @@ class Reserve {
     /**
      * @return mixed
      */
-    public function getStartDate()
+    public function getStartingDate()
     {
         return $this->starting_date;
     }
 
     /**
-     * @param mixed $start_date
+     * @param mixed $starting_date
      */
     public function setStartingDate($starting_date)
     {
@@ -63,27 +65,11 @@ class Reserve {
     }
 
     /**
-     * @param mixed $end_date
+     * @param mixed $ending_date
      */
     public function setEndingDate($ending_date)
     {
         $this->ending_date = $ending_date;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRoomsNumber()
-    {
-        return $this->rooms_number;
-    }
-
-    /**
-     * @param mixed $rooms_number
-     */
-    public function setRoomsNumber($rooms_number)
-    {
-        $this->rooms_number = $rooms_number;
     }
 
     /**
@@ -169,22 +155,6 @@ class Reserve {
     /**
      * @return mixed
      */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    /**
-     * @param mixed $phone
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getEmail()
     {
         return $this->email;
@@ -212,6 +182,54 @@ class Reserve {
     public function setObservations($observations)
     {
         $this->observations = $observations;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param mixed $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
     }
 
     /**
@@ -271,11 +289,11 @@ class Reserve {
     }
 
     /**
-     * @param mixed $card_expiration
+     * @param mixed $card_expiration_month
      */
     public function setCardExpirationMonth($card_expiration_month)
     {
-        $this->card_expiration = $card_expiration_month;
+        $this->card_expiration_month = $card_expiration_month;
     }
 
     /**
@@ -287,11 +305,11 @@ class Reserve {
     }
 
     /**
-     * @param mixed $card_expiration
+     * @param mixed $card_expiration_year
      */
     public function setCardExpirationYear($card_expiration_year)
     {
-        $this->card_expiration = $card_expiration_year;
+        $this->card_expiration_year = $card_expiration_year;
     }
 
     /**
@@ -308,6 +326,22 @@ class Reserve {
     public function setCardCvc($card_cvc)
     {
         $this->card_cvc = $card_cvc;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTotalAmount()
+    {
+        return $this->total_amount;
+    }
+
+    /**
+     * @param mixed $total_amount
+     */
+    public function setTotalAmount($total_amount)
+    {
+        $this->total_amount = $total_amount;
     }
 
     /**
@@ -335,7 +369,7 @@ class Reserve {
     }
 
     /**
-     * @param mixed $associated_rooms
+     * @param mixed $assigned_rooms
      */
     public function setAssignedRooms($assigned_rooms)
     {

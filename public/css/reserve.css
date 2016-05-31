@@ -169,8 +169,13 @@
 }
 
 .next{
-    padding: 0px 0px 20px 155px;
+    padding-bottom: 20px;
     margin: 0 !important;
+}
+
+.next p{
+    font-family:'Noto Serif','Droid Serif', serif;
+    font-size:1.8em;
 }
 
 .noroom-message{
@@ -186,17 +191,15 @@
     padding-bottom: 0px;
 }
 
-.garantia{
+.warranty{
     font-family: 'Noto Serif','Droid Serif', serif;
-    margin: 0;
-    padding: 0;
     background-color: white;
     color: #232528;
-    border-bottom: 6px;
-    border-bottom-color: black;
+    padding-bottom: 20px;
 }
 
-.garantia h4{
+.warranty h4{
+    border-bottom: 1px solid black;
     margin: 0;
     padding: 0;
 }
