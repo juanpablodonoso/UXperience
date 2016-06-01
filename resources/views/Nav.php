@@ -23,7 +23,7 @@ class Nav{
                                     <li><a href="?page=triple-room">Habitación triple</a></li>
                                     <li><a href="?page=superior-room">Habitación superior</a></li>
                                 </ul>
-                            <li><a href="#service">Servicios</a></li>
+                            <li><a href="?page=service">Servicios</a></li>
                             <li><a href="?page=gallery">Galería</a></li>
                             <li><a href="?page=contact">Contacto y ubicación</a></li>
                             <li><a href="?page=myreserve">Mi reserva</a></li>

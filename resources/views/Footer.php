@@ -63,14 +63,9 @@
                             <h4>Enlaces</h4>
                             <hr>
                             <ul class="footer-links">
-                                <li><a href="index.php?page=promotions">Promociones</a></li>
-                                <li><a href="index.php?page=rooms">· Habitaciones</a></li>
-                                <li><a href="index.php#service">· Servicios</a></li>
-                                <li><a href="index.php?page=gallery">· Galería</a></li>
-                                <li><a href="index.php?page=contact">· Contacto y ubicación</a></li>
-                                <li><a href="index.php?page=opinions">· Opiniones</a></li>
-                                <li><a href="index.php?page=myreserve">· Mi reserva</a></li>
-                                <li><a href="index.php?page=intranet">· Intranet</a></li>
+                                <li><a href="index.php?page=aboutus">Sobre nosotros</a></li>
+                                <li><a href="index.php?page=sitemap">Mapa del sitio</a></li>
+                                <li><a href="index.php?page=intranet">Intranet</a></li>
                             </ul>
                         </div>
 

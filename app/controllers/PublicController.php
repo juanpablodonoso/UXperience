@@ -9,6 +9,7 @@ include_once '../resources/views/PromotionsView.php';
 include_once '../resources/views/RoomsView.php';
 include_once '../resources/views/ReserveView.php';
 include_once '../resources/views/MyReserveView.php';
+include_once '../resources/views/SiteMapView.php';
 include_once '../app/controllers/ReservesController.php';
 
 class PublicController{
@@ -72,6 +73,10 @@ class PublicController{
                     $step = $_REQUEST['step'];
                     $reserve->print_reserve($step);
                 }
+                break;
+            case 'sitemap':
+                $sitemap = new SiteMapView();
+                $sitemap->print_site_map();
                 break;
             default:
                 $home = new HomeView();

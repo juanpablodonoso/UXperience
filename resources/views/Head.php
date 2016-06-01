@@ -45,6 +45,10 @@
                     $title = ' - Reservar';
                     $css = 'reserve.css';
                     break;
+                case 'sitemap':
+                    $title = ' - Mapa del sitio';
+                    $css = 'sitemap.css';
+                    break;
                 default:
                     $css = 'index.css';
                     break;
