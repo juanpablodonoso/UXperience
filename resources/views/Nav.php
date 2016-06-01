@@ -3,7 +3,7 @@
 class Nav{
 
     function print_nav(){
-        echo '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        echo '<nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -26,7 +26,6 @@ class Nav{
                             <li><a href="#service">Servicios</a></li>
                             <li><a href="?page=gallery">Galería</a></li>
                             <li><a href="?page=contact">Contacto y ubicación</a></li>
-                            <li><a href="?page=opinions">Opiniones</a></li>
                             <li><a href="?page=myreserve">Mi reserva</a></li>
                             <li id="active"><a href="?page=reserve&step=select_room">RESERVAR AHORA</a></li>
                         </ul>

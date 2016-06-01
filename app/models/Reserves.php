@@ -35,6 +35,19 @@ class Reserves extends Model{
         return $reserve;
     }
 
+    function findByEmailCode($email,$id){
+        $db = Db::getInstance();
+        $statement = 'SELECT * FROM reserves WHERE id = \''.$id.'\'AND email=\''.$email.'\'';
+        $result = $db->query($statement);
+        $reserve = null;
+        if($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            $reserve = new Reserve();
+            $this->silentSave($reserve, $row);
+        }
+        return $reserve;
+    }
+
     function delete($id){
         $statement = 'DELETE FROM reserves WHERE id = \''.$id.'\'';
         return Db::getInstance()->query($statement);

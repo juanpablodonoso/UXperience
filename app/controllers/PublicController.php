@@ -8,6 +8,7 @@ include_once '../resources/views/Nav.php';
 include_once '../resources/views/PromotionsView.php';
 include_once '../resources/views/RoomsView.php';
 include_once '../resources/views/ReserveView.php';
+include_once '../resources/views/MyReserveView.php';
 include_once '../app/controllers/ReservesController.php';
 
 class PublicController{
@@ -53,6 +54,17 @@ class PublicController{
             case 'contact':
                 $contact = new ContactView();
                 $contact->print_contact();
+                break;
+            case 'myreserve':
+                $myReserve = new MyReserveView();
+                if(isset($_REQUEST['email'],$_REQUEST['reserve_code'])) {
+                    $reserves = new ReservesController();
+                    $reserve = $reserves->findByEmailCode($_REQUEST['email'],$_REQUEST['reserve_code']);
+                    $myReserve->print_my_reserve($reserve);
+                }
+                else{
+                    $myReserve->print_form();
+                }
                 break;
             case 'reserve':
                 if(isset($_REQUEST['step'])){
