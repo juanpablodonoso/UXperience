@@ -79,7 +79,8 @@
                     echo'<script src="js/emailValidation.js"></script>';
                 else if($page == 'intranet')
                     echo'<script src="js/intranet.js"></script>';
-
+                else if($page == 'reserve')
+                    echo'<script src="js/reserve.js"></script>';
 
 
 
@@ -102,7 +103,7 @@
 
                 ';
 
-                if($page == 'homepage' || $page = 'contact')
+                if($page == 'homepage' || $page == 'contact' || $page==null)
                     $this->printGoogleMap();
 
                 echo'</head>';
