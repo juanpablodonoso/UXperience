@@ -76,6 +76,12 @@ class ReservesController
         return $available;
     }
 
+    function findByEmailCode($email,$code){
+        $reserves = new Reserves();
+        $reserve = $reserves->findByEmailCode($email,$code);
+        return $reserve;
+    }
+
     function insertReservedRooms($id){
         if($_POST['select_Individual'] != 0){
             $reserverooms = new ReserveRooms();

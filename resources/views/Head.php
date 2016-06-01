@@ -33,6 +33,10 @@
                     $title = ' - Galería';
                     $css = 'gallery.css';
                     break;
+                case 'myreserve':
+                    $title = ' - Ver mi reserva';
+                    $css = 'reserve.css';
+                    break;
                 case 'contact':
                     $title = ' - Contacto y ubicación';
                     $css = 'contact.css';
@@ -40,6 +44,10 @@
                 case 'reserve':
                     $title = ' - Reservar';
                     $css = 'reserve.css';
+                    break;
+                case 'sitemap':
+                    $title = ' - Mapa del sitio';
+                    $css = 'sitemap.css';
                     break;
                 default:
                     $css = 'index.css';
@@ -62,6 +70,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
                 <!-- Latest compiled JavaScript -->
                 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
                 <!-- Personal scripts -->
 
                 <div id="fb-root"></div>
