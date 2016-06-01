@@ -29,6 +29,8 @@ class ReserveView
 
     private function print_select_room(){
         session_start();
+        $_SESSION['adults_number'] = '0';
+        $_SESSION['children_number'] = '0';
         if(isset($_SESSION['expire'])){
             if(time()>$_SESSION['expire']){
                 session_unset();

@@ -1,5 +1,5 @@
 .parallax-room {
-    background:linear-gradient(rgba(28,28,28,.3),rgba(28,28,28,.3)),url(../img/rooms.jpg);
+    background:linear-gradient(rgba(28,28,28,.3), rgba(28, 28, 28, 0.3)),url(../img/rooms.jpg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;

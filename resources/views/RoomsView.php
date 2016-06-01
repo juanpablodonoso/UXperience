@@ -101,9 +101,6 @@ class RoomsView{
                                     <li><a href="index.php?page=superior-room">Habitación Superior</a></li>
 
 
-                                    <button type="button" class="btn btn-xs btn-default" data-toggle="popover" title="Popover title" data-content="And here\'s some amazing content. It\'s very engaging. Right?">Click to toggle popover</button>
-
-
                             </ol>
 
                                     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
@@ -269,14 +266,78 @@ class RoomsView{
                             <ol class="breadcrumb">
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="index.php?page=rooms">Habitaciones</a></li>
-                                    <li><a href="index.php?page=double-room"</a>Habitación Doble</li>
-                                    <li><a href="index.php?page=triple-room"</a>Habitación Triple</li>
-                                    <li class="active"><a>Habitación Superior</a></li>
+                                    <li><a href="index.php?page=double-room"></a>Habitación doble</li>
+                                    <li><a href="index.php?page=triple-room">Habitación triple</a></li>
+                                    <li class="active"><a></a>Habitación Superior</li>
+
                             </ol>
                             </div>
+                             </div>
 
+
+                                <div class="row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-8 text-center description">
+                                        <h2>Habitación doble</h2>
+                                        <hr>
+                                            <div id="carousel-habitaciones" class="carousel slide" data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                                </ol>
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner room-slider">
+                                                    <div class="item active">
+                                                        <img class="img-responsive" src="img/doble1.jpg" alt="">
+                                                    </div>
+                                                    <div class="item">
+                                                        <img class="img-responsive" src="img/doble.jpg" alt="">
+                                                    </div>
+                                                    <div class="item">
+                                                        <img class="img-responsive" src="img/doble3.png" alt="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Controls -->
+                                                <a class="left carousel-control" href="#carousel-habitaciones" data-slide="prev">
+                                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                                </a>
+                                                <a class="right carousel-control" href="#carousel-habitaciones" data-slide="next">
+                                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                                </a>
+                                            </div>
+                                            <hr>
+                                            <p>En nuestras habitaciones<strong> standard</strong> disfrutará de todo el equipamiento
+                                            y comodidades que su estancia en Granada merece.</p>
+
+                                            <!-- Call to Action Section -->
+                                        <div class="well">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p>
+                                                        Aplique su código de promoción a esta habitación o elija entre las diferentes excursiones que le recomendamos
+                                                        durante el proceso de reserva.
+
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a href="index.php?page=reserve&step=availability" class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span><strong>Realice su reserva</strong></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                        <div class="col-sm-2"></div>
+                                    </div>
+                                </div>
+                                <!--<div class="row">
+
+
+                                    </div>-->
                             </div>
-
 
 
                             <div class="row">
@@ -287,9 +348,7 @@ class RoomsView{
                                      <div class="btn btn-default btn-sm" href="#">Galeria</div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <figure>
-                                        <img class="img-responsive" src="img/superior.jpg" alt="Habitación superior">
-                                    </figure>
+
                                 </div>
                             </div>
                         </div>
