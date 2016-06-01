@@ -97,7 +97,10 @@
                  <link href="http://fonts.googleapis.com/css?family=Numans" rel="stylesheet" type="text/css"/>
                 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
                 <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css">
-                <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic" rel="stylesheet" type="text/css">';
+                <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic" rel="stylesheet" type="text/css">
+
+
+                ';
 
                 if($page == 'homepage' || $page = 'contact')
                     $this->printGoogleMap();

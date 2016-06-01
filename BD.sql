@@ -188,3 +188,5 @@ CREATE TABLE `promotions` (
    PRIMARY KEY (`id`),
    UNIQUE KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+DROP  TABLE IF EXISTS `hotel`;
