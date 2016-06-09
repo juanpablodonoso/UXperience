@@ -267,7 +267,7 @@ class RoomsView{
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="index.php?page=rooms">Habitaciones</a></li>
                                     <li><a href="index.php?page=double-room"></a>Habitación doble</li>
-                                    <li><a href="index.php?page=triple-room">Habitación triple</a></li>
+                                    <li><a href="index.php?page=triple-room"></a>Habitación triple</li>
                                     <li class="active"><a></a>Habitación Superior</li>
 
                             </ol>
@@ -278,7 +278,7 @@ class RoomsView{
                                 <div class="row">
                                     <div class="col-sm-2"></div>
                                     <div class="col-sm-8 text-center description">
-                                        <h2>Habitación doble</h2>
+                                        <h2>Habitación Superior</h2>
                                         <hr>
                                             <div id="carousel-habitaciones" class="carousel slide" data-ride="carousel">
                                                 <!-- Indicators -->
@@ -318,9 +318,8 @@ class RoomsView{
                                             <div class="row">
                                                 <div class="col-md-8">
                                                     <p>
-                                                        Aplique su código de promoción a esta habitación o elija entre las diferentes excursiones que le recomendamos
-                                                        durante el proceso de reserva.
-
+                                                       Disfrute de una<strong> magnifica vista de Plaza Nueva</strong> y
+                                        el centro de Granada desde nuestras habitaciones superiores.</p>
                                                     </p>
                                                 </div>
                                                 <div class="col-md-4">
@@ -337,21 +336,7 @@ class RoomsView{
 
 
                                     </div>-->
-                            </div>
 
-
-                            <div class="row">
-                                <div class="col-sm-6 text-center description">
-                                    <h1>Habitación superior</h1>
-                                    <p>Disfrute de una<strong> magnifica vista de Plaza Nueva</strong> y
-                                        el centro de Granada desde nuestras habitaciones superiores.</p>
-                                     <div class="btn btn-default btn-sm" href="#">Galeria</div>
-                                </div>
-                                <div class="col-sm-6">
-
-                                </div>
-                            </div>
-                        </div>
                 </section>';
                 break;
         }
